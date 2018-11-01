@@ -2,8 +2,8 @@
 This project lets you try out Tkinter/Ttk and practice it!
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Jacob Ritenour.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import tkinter
 from tkinter import ttk
@@ -12,25 +12,25 @@ from tkinter import ttk
 def main():
     """ Constructs a GUI with stuff on it. """
     # ------------------------------------------------------------------
-    # TODO: 2. After reading and understanding the m1e module,
+    # DONE: 2. After reading and understanding the m1e module,
     #   ** make a window that shows up. **
     # ------------------------------------------------------------------
     root =tkinter.Tk()
 
     # ------------------------------------------------------------------
-    # TODO: 3. After reading and understanding the m2e module,
+    # DONE: 3. After reading and understanding the m2e module,
     #   ** put a Frame on the window. **
     # ------------------------------------------------------------------
     frame = ttk.Frame(root, padding=20)
     frame.grid()
     # ------------------------------------------------------------------
-    # TODO: 4. After reading and understanding the m2e module,
+    # DONE: 4. After reading and understanding the m2e module,
     #   ** put a Button on the Frame. **
     # ------------------------------------------------------------------
     button = ttk.Button(frame, text='Button')
     button.grid()
     # ------------------------------------------------------------------
-    # TODO: 5. After reading and understanding the m3e module,
+    # DONE: 5. After reading and understanding the m3e module,
     #   ** make your Button respond to a button-press **
     #   ** by printing   "Hello"  on the Console.     **
     # ------------------------------------------------------------------
@@ -38,7 +38,7 @@ def main():
     printing_button['command'] = (lambda: print_greeting())
     printing_button.grid()
     # ------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -52,7 +52,7 @@ def main():
     entry_button['command'] = (lambda: print_contents(my_entry_box))
     entry_button.grid()
     # ------------------------------------------------------------------
-    # TODO: 7.
+    # DONE: 7.
     #    -- Put a second Entry on the Frame.
     #    -- Put a third Button on the frame.
     #    -- Make this new Button respond to a button-press as follows:
@@ -77,7 +77,7 @@ def main():
     second_entry_box = ttk.Entry(frame)
     second_entry_box.grid()
     second_entry_button = ttk.Button(frame, text='Print Multiples')
-
+    second_entry_button['command'] = (lambda: print_multiples(my_entry_box, second_entry_box))
     second_entry_button.grid()
     # ------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
@@ -94,9 +94,10 @@ def print_contents(entry_box):
     contents_of_entry_box = entry_box.get()
     print(contents_of_entry_box)
 
-def print_multiples(second_entry_box):
+def print_multiples(entry_box, second_entry_box):
+    contents_of_entry_box = entry_box.get()
     s = second_entry_box.get()
-    n = int(s)
-
+    n= int(s)
+    print(contents_of_entry_box*n)
 
 main()
